@@ -42,7 +42,7 @@ router.post(
         user,
       });
     }),
-  );
+);
 
   // Log out
 router.delete(
