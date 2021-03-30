@@ -13,7 +13,7 @@ module.exports = {
         references: { model: "Users" }
       },
       productName: {
-        type: Sequelize.STRING(30)
+        type: Sequelize.STRING(90)
       },
       description: {
         type: Sequelize.STRING(300)
@@ -23,11 +23,13 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now')
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now')
       }
     });
   },
