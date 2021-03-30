@@ -48,8 +48,8 @@ module.exports = (sequelize, DataTypes) => {
   });
   User.associate = function(models) {
     User.hasMany(models.Listing, { foreignKey: "userId" }),
-    User.hasMany(models.ShoppingCart, { foreignKey: "userId"}),    // POTENTIALLY WRONG ********************************************************
-    
+    User.hasOne(models.ShoppingCart, { foreignKey: "userId" }),    // POTENTIALLY WRONG ********************************************************
+    User.hasMany(models.Review, { foreignKey: "userId" })
 
   };
 

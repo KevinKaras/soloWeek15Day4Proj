@@ -8,7 +8,12 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Listing.associate = function(models) {
     Listing.belongsTo(models.User, { foreignKey: "userId"}),
-    Listing.hasMany(models.Review, { foreignKey: "listingId"})
+    Listing.hasMany(models.Review, { foreignKey: "listingId"}),
+    Listing.belongsToMany(models.ShoppingCart, {
+      through: 'ShoppingCartListing',
+      otherKey: 'shoppingCartId',
+      foreignKey: 'listingId'
+    })
   };
   return Listing;
 };

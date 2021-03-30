@@ -5,7 +5,12 @@ module.exports = (sequelize, DataTypes) => {
     quantity: DataTypes.INTEGER
   }, {});
   ShoppingCart.associate = function(models) {
-    ShoppingCart.belongsTo(models.User, { foreignKey: "userId" })
+    ShoppingCart.belongsTo(models.User, { foreignKey: "userId" }),
+    ShoppingCart.belongsToMany(models.Listing, {
+      through: 'ShoppingCartListing',
+      otherKey: 'listingId',
+      foreignKey: 'shoppingCartId'
+    })
   };
   return ShoppingCart;
 };
