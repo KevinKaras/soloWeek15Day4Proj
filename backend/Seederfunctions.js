@@ -109,3 +109,20 @@ const bcrypt = require('bcryptjs');
 //     }
 // }
 // seedCarts(100)
+
+
+const seedReviews = (num) => {
+    let i = 0;
+    while(i < num) {
+        const review = {
+            userId: Math.floor(Math.random() * Math.floor(100) + 1),
+            listingId: Math.floor(Math.random() * Math.floor(4) + 1),
+            title: faker.lorem.words(1),
+            textBody: faker.lorem.sentences(3),
+        }
+        console.log(review, ",")
+        i++;
+    }
+}
+
+seedReviews(50)

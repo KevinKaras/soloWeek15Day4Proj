@@ -5,9 +5,13 @@ const { User } = require('../../db/models');
 const { requireAuth } = require('../../utils/auth.js');
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
+const productRouter = require('./products');
 
+
+
+
+router.use('/products', productRouter);
 router.use('/session', sessionRouter);
-
 router.use('/users', usersRouter);
 
 

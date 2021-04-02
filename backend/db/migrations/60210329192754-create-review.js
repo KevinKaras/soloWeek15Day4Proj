@@ -17,7 +17,7 @@ module.exports = {
         references: { model: "Listings" }
       },
       title: {
-        type: Sequelize.STRING(20)
+        type: Sequelize.STRING(40)
       },
       textBody: {
         type: Sequelize.STRING(300)
