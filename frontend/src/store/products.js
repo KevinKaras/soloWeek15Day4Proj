@@ -1,5 +1,6 @@
 
 
+
 const LOAD = 'products/LOAD';
 
 const ADD_PRODUCT = 'products/ADD'
@@ -33,6 +34,15 @@ export const grabListings = () => async (dispatch) => {
 
 }
 
+export const addListing = (listingForm) => async (dispatch) => {
+    const response = await fetch('/create', {
+        method: "POST",
+         
+    });
+
+    
+
+}
 
 
 
@@ -52,9 +62,11 @@ const listingReducer = (state = initialState, action) => {
             // })
             return newState;
         }
-        // case ADD_PRODUCT: {
-
-        // }
+        case ADD_PRODUCT: {
+            newState = {...state, products: [...action.products]}
+             
+            return newState;
+        }
         default: return state;
     }
 }

@@ -1,0 +1,52 @@
+.HEADER {
+    background-color: rgb(253, 235, 210);
+    margin-bottom: 20px;
+}
+
+.navBar {
+    display: flex; 
+    justify-content: space-around;
+}
+
+.titleHeader {
+    display: flex;
+    justify-content: center;
+}
+
+.loginRoute {
+    display: block;
+    padding: 5px;
+    border-width: 1px;
+    background-color: rgb(230, 203, 165);
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.541);
+    
+}
+
+.homeRoute {
+    padding: 5px;
+    border-width: 1px;
+    background-color: rgb(230, 203, 165);
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.541);
+}
+
+.signupRoute {
+    padding: 5px;
+    border-width: 1px;
+    background-color: rgb(230, 203, 165);
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.541);
+}
+
+.createRoute {
+    padding: 5px;
+    border-width: 1px;
+    background-color: rgb(230, 203, 165);
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.541);
+}

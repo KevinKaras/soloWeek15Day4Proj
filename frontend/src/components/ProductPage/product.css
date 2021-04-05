@@ -1,0 +1,55 @@
+.photo {
+    width: 300px;
+    height: 300px;
+}
+
+.form {
+    display: block;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    margin-right: 615px;
+
+
+}
+
+.reviewFormTitle {
+    margin-bottom: 0px;
+    display: block;
+    
+}
+
+.textBox {
+    margin-bottom: 7px;
+    display: block;
+    margin: 0px -312px 7px 0px; 
+    height: 97px; 
+    width: 526px
+}
+
+.submitBtn {
+    margin-left: 427px;
+}
+
+.reviewTitle {
+    margin-right: 615px;
+    background-color: #f2f2f2;
+    
+}
+
+.reviewTextBody {
+    margin-right: 615px;
+}
+
+.addBtn {
+    border-radius: 30px;
+    font-size: 20px;
+    padding: 15px 100px;
+    background-color: #222222;
+    color: white;
+    font-family: "Graphik Webfont", -apple-system, BlinkMacSystemFont, Roboto, "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.titleText {
+    text-decoration: underline;
+}
+

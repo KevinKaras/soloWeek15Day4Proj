@@ -1,0 +1,34 @@
+.formElement {
+    display: block;
+    margin-right: 850px;
+
+}
+
+.submitBtnDiv {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.submitProductBtn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.productPriceInput {
+    display: flex;
+    width: 200px;
+}
+
+.productDescriptionInput {
+    display: flex;
+    width: 400px;
+    height: 100px;
+}
+
+.productTitleInput {
+    display: flex;
+    width: 200px;
+}
+.productPrice {
+    margin-bottom: 10px;
+}

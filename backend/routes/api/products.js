@@ -11,23 +11,43 @@ productRouter.get('/', asyncHandler( async(req, res) => {
      
 }));
 
-productRouter.post(
-    "/",
-    singleMulterUpload("image"),
-    asyncHandler(async (req, res) => {
-      const { productName, description, price } = req.body;
-      const pictureUrl = await singlePublicFileUpload(req.file);
-      const product = await Listing.create({
-        productName,
-        description,
-        price,
-        pictureUrl,
-      });
+// productRouter.post(
+//     "/",
+//     singleMulterUpload("image"),
+//     asyncHandler(async (req, res) => {
+//       const { productName, description, price } = req.body;
+//       const pictureUrl = await singlePublicFileUpload(req.file);
+//       const product = await Listing.create({
+//         productName,
+//         description,
+//         price,
+//         pictureUrl,
+//       });
   
-      return res.json({
-        product,
-      });
-    })
-  );
+//       return res.json({
+//         product,
+//       });
+//     })
+// );
+
+productRouter.get('/create', asyncHandler( async(req, res) => {
+  
+  
+  const { title, description, price } = req.body;
+  console.log("WE GOT HIT")
+
+}))
+
+
+productRouter.post('/create', asyncHandler( async(req, res) => {
+  
+  
+  const { title, description, price } = req.body;
+  console.log("WE GOT HIT")
+
+}))
+
+
+
 
 module.exports = productRouter;

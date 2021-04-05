@@ -24,20 +24,23 @@ const ProductFeedContainer = () => {
 
 
     return(
+
         <div>
-           {products.map((product) =>{
-               return <div>
-                   <NavLink to={`/products/${product.id}`}>{product.productName}</NavLink>
-                   <ul>
-                       <li>
-                            {product.description}
-                       </li>
-                       <li>
-                            ${product.price}
-                       </li>
-                   </ul>
-               </div>
-           })}
+            <div>
+            {products.map((product) =>{
+                return <div>
+                    <NavLink to={`/products/${product.id}`}>{product.productName}</NavLink>
+                    <ul>
+                        <li>
+                                {product.description}
+                        </li>
+                        <li>
+                                ${product.price}
+                        </li>
+                    </ul>
+                </div>
+            })}
+            </div>
         </div>
     )
 

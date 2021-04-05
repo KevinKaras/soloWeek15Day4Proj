@@ -3,6 +3,8 @@ import { setReviews } from '../../store/reviews'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useParams } from 'react-router-dom'
+import meme from './meme.jpg';
+import "./product.css"
 
 
 
@@ -33,15 +35,35 @@ const ProductPage = () => {
 
     return(
         <div>
-           <h1>Product Name: {pageProduct.productName}</h1>
-           <h2>Price: ${pageProduct.price} </h2>
-           <h3>Description: "{pageProduct.description}"</h3>
+           <div>
+            <a>
+                <img alt="meme" className="photo" src={meme} />
+            </a>
+           </div>
+           <h1 className="titleText">{pageProduct.productName}</h1>
+           <h2>"{pageProduct.description}"</h2>
+           <h3 className="price">${pageProduct.price} </h3>
+           <button className="addBtn">Add to cart</button>
 
-           <h1>Reviews:</h1>
-           <h3>Title: {curProductReview.title}</h3>
-           <p>{curProductReview.textBody}</p>
+            <div>
+                <h1 className="reviewTitle">Reviews:</h1>
+                <div className="reviewEntity">
+                    <h3>{curProductReview.title}</h3>
+                    <p className="reviewTextBody">{curProductReview.textBody}</p>
+                </div> 
+                    
 
+                <form className="form">
+                    <label className="text">
+                        <h2 className="reviewFormTitle">Add a review</h2>
+                    </label>
+                        <textarea type="text" className="textBox" name="review" />
+                        <input type="submit" value="Submit Review" className="submitBtn" />
+                </form>
 
+            </div>
+
+            
 
 
         </div>

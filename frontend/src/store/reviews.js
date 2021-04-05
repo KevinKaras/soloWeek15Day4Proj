@@ -1,11 +1,16 @@
 
 const SET_REVIEWS = 'reviews/SET'      
 
-
+const CREATE_REVIEWS = 'reviews/CREATE'
 
 
 const set = reviews => ({
     type: SET_REVIEWS,
+    reviews
+})
+
+const create = reviews => ({
+    type: CREATE_REVIEWS,
     reviews
 })
 
@@ -15,11 +20,19 @@ export const setReviews = () => async (dispatch) => {
     // console.log("RESPONSE IS:". theResponse);
     if(theResponse.ok) {
         const actualReviews = await theResponse.json();
-        console.log(actualReviews.reviews);
+        // console.log(actualReviews.reviews);
         dispatch(set(actualReviews.reviews))
 
     }
 }
+
+export const createReview = () => async (dispatch) => {
+    
+}
+
+
+
+
 
 const initialReviewState = {};
 
