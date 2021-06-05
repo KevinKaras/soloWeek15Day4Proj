@@ -16,13 +16,16 @@ const CreateListingPage = () => {
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
 
+    const userId = useSelector(state => state.session.user.id)
 
+    console.log(userId)
     const dispatch = useDispatch();
 
     const onSubmit = (e) => {
         e.preventDefault()
 
         const listingForm = {
+            userId,
             title,
             description,
             price

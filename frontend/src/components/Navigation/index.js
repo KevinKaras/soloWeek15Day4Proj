@@ -22,7 +22,7 @@ function Navigation({ isLoaded }){
           <NavLink  to="/signup">Sign Up</NavLink>
         </div>
         <div className="createRoute">
-          <NavLink to="/create">Create Listing</NavLink>
+          <NavLink to="/create-listing">Create Listing</NavLink>
         </div>
           
       </>

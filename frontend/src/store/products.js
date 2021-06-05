@@ -35,7 +35,7 @@ export const grabListings = () => async (dispatch) => {
 }
 
 export const addListing = (listingForm) => async (dispatch) => {
-    const response = await fetch(`${baseUrl}/api/products/create`, {
+    const response = await fetch(`${baseUrl}/api/create`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: listingForm

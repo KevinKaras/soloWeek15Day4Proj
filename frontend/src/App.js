@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/">
             <ProductFeedContainer />
           </Route>
-          <Route path="/products/:prodId">
+          <Route exact path="/products/:prodId">
             <ProductPage />
           </Route>
           <Route path="/login">
@@ -33,7 +33,7 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/create">
+          <Route path="/create-listing">
             <CreateListingPage />
           </Route>
         </Switch>
