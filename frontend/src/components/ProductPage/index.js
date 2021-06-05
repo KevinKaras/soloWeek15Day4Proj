@@ -1,4 +1,4 @@
-import { grabListings } from '../../store/products';
+import { grabListings, grabCurListing } from '../../store/products';
 import { setReviews } from '../../store/reviews'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,9 +9,11 @@ import "./product.css"
 
 
 const ProductPage = () => {
+    const { prodId } = useParams();
+
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(grabListings());
+        dispatch(grabCurListing(prodId));
         dispatch(setReviews())
     }, [dispatch])
     const products = useSelector(state => {
@@ -21,14 +23,20 @@ const ProductPage = () => {
         return state.reviews.reviews
     })
     
-    const { prodId } = useParams();
+    
 
 
-    const pageProduct = products[prodId-1];
+    
+    const pageProduct = products.find((product) => product.id === +prodId);
+    if (!pageProduct) {
+        return (<div></div>)
+    }
+    // console.log(products)
+    // console.log(pageProduct)
 
-    const curProductReview = reviews[prodId-1]
+    const curProductReviews = []
 
-    console.log(curProductReview)
+    // console.log(curProductReviews)
     
     
     
@@ -48,8 +56,8 @@ const ProductPage = () => {
             <div>
                 <h1 className="reviewTitle">Reviews:</h1>
                 <div className="reviewEntity">
-                    <h3>{curProductReview.title}</h3>
-                    <p className="reviewTextBody">{curProductReview.textBody}</p>
+                    {/* <h3>{curProductReviews.title}</h3>
+                    <p className="reviewTextBody">{curProductReviews.textBody}</p> */}
                 </div> 
                     
 

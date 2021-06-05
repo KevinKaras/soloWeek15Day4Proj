@@ -11,6 +11,14 @@ productRouter.get('/', asyncHandler( async(req, res) => {
      
 }));
 
+productRouter.get('/:id', asyncHandler( async(req, res) => {
+    const { id } = req.params
+    
+    const product = await Listing.findByPk(id)
+    res.json({product})
+
+}))
+
 // productRouter.post(
 //     "/",
 //     singleMulterUpload("image"),

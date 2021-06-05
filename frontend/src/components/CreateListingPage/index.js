@@ -12,7 +12,7 @@ import "./createListing.css"
 
 
 const CreateListingPage = () => {
-    const [title, setTitle] = useState('');
+    const [productName, setproductName] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
 
@@ -26,12 +26,13 @@ const CreateListingPage = () => {
 
         const listingForm = {
             userId,
-            title,
+            productName,
             description,
             price
         }
+        console.log(listingForm)
 
-        setTitle('')
+        setproductName('')
         setDescription('')
         setPrice('')
         dispatch(addListing(listingForm))
@@ -49,7 +50,7 @@ const CreateListingPage = () => {
             <form onSubmit={onSubmit} className="formElement">
                 <div className="productTitle">
                     <label>Product Name: </label>
-                    <input className="productTitleInput" type="text" value={title} onChange={(e) => setTitle(e.target.value)}></input>
+                    <input className="productTitleInput" type="text" value={productName} onChange={(e) => setproductName(e.target.value)}></input>
                 </div>
                 <div className="productDescription">
                     <label>Description: </label>

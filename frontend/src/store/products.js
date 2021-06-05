@@ -5,6 +5,8 @@ const LOAD = 'products/LOAD';
 
 const ADD_PRODUCT = 'products/ADD'
 
+const GET_PRODUCT = 'product/GET_PRODUCT'
+
 
 
 
@@ -18,6 +20,11 @@ const load = products => ({
     products
 })
 
+const getProd = product => ({
+    type: GET_PRODUCT,
+    product
+})
+
 
 
 
@@ -28,22 +35,32 @@ export const grabListings = () => async (dispatch) => {
     if (response.ok) {
         
         const actualListings = await response.json();
-        console.log(actualListings.products);
+        // console.log(actualListings.products);
         dispatch(load(actualListings.products))
     } 
 
 }
 
 export const addListing = (listingForm) => async (dispatch) => {
+    console.log(listingForm)
     const response = await fetch(`${baseUrl}/api/create`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: listingForm
+        body: JSON.stringify(listingForm)
     });
-    
 
     
 
+}
+
+export const grabCurListing = (prodId) => async (dispatch) => {
+    const response = await fetch(`${baseUrl}/api/products/${prodId}`)
+    if(response.ok){
+        const currentListing = await response.json();
+        dispatch(getProd(currentListing.product))
+        
+    }
+    
 }
 
 
@@ -68,6 +85,10 @@ const listingReducer = (state = initialState, action) => {
             newState = {...state, products: [...action.products]}
              
             return newState;
+        }
+        case GET_PRODUCT: {
+            return {...state, products: [...state.products, action.product]}
+            
         }
         default: return state;
     }
