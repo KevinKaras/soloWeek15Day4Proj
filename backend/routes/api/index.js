@@ -6,6 +6,7 @@ const { requireAuth } = require('../../utils/auth.js');
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
 const productRouter = require('./products');
+const createRouter = require('./create')
 
 
 
@@ -13,6 +14,7 @@ const productRouter = require('./products');
 router.use('/products', productRouter);
 router.use('/session', sessionRouter);
 router.use('/users', usersRouter);
+router.use('/create', createRouter)
 
 
 router.post('/test', function (req, res) {

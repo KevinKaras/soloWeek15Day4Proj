@@ -30,29 +30,7 @@ productRouter.get('/', asyncHandler( async(req, res) => {
 //     })
 // );
 
-productRouter.get('/create', asyncHandler( async(req, res) => {
-  const { title, description, price } = req.body;
-  
 
-}))
-
-
-productRouter.post('/create', asyncHandler( async(req, res) => {
-  const { userId, productName, description, price } = req.body;
-  
-  const product = await Listing.create({
-    userId,
-    productName, 
-    description, 
-    price
-  })
-
-  return res.json({
-    product
-  })
-  
-
-}))
 
 
 
