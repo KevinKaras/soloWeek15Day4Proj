@@ -1,4 +1,4 @@
-
+import { baseUrl } from "../config"
 
 
 const LOAD = 'products/LOAD';
@@ -23,7 +23,7 @@ const load = products => ({
 
 
 export const grabListings = () => async (dispatch) => {
-    const response = await fetch('/api/products');
+    const response = await fetch(`${baseUrl}/api/products`);
     // console.log("REPONSE:", response);
     if (response.ok) {
         
@@ -35,10 +35,12 @@ export const grabListings = () => async (dispatch) => {
 }
 
 export const addListing = (listingForm) => async (dispatch) => {
-    const response = await fetch('/create', {
+    const response = await fetch(`${baseUrl}/api/products/create`, {
         method: "POST",
-         
+        headers: {"Content-Type": "application/json"},
+        body: listingForm
     });
+    
 
     
 

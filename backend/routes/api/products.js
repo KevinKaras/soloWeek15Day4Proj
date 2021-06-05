@@ -31,19 +31,26 @@ productRouter.get('/', asyncHandler( async(req, res) => {
 // );
 
 productRouter.get('/create', asyncHandler( async(req, res) => {
-  
-  
   const { title, description, price } = req.body;
-  console.log("WE GOT HIT")
+  
 
 }))
 
 
 productRouter.post('/create', asyncHandler( async(req, res) => {
+  const { userId, productName, description, price } = req.body;
   
+  const product = await Listing.create({
+    userId,
+    productName, 
+    description, 
+    price
+  })
+
+  return res.json({
+    product
+  })
   
-  const { title, description, price } = req.body;
-  console.log("WE GOT HIT")
 
 }))
 
